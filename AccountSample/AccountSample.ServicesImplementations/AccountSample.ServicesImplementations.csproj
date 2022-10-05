@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccountSample.Domain\AccountSample.Domain.csproj" />
+    <ProjectReference Include="..\AccountSample.ServiceInterfaces\AccountSample.ServiceInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDependency", "SimpleDependency\SimpleDependency.csproj", "{1EEDFD53-2B99-4D33-B8D0-2AE674DC8328}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagePrinter", "MessagePrinter\MessagePrinter.csproj", "{D30A0536-3991-41A0-B586-329C64686015}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EEDFD53-2B99-4D33-B8D0-2AE674DC8328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EEDFD53-2B99-4D33-B8D0-2AE674DC8328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EEDFD53-2B99-4D33-B8D0-2AE674DC8328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EEDFD53-2B99-4D33-B8D0-2AE674DC8328}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30A0536-3991-41A0-B586-329C64686015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30A0536-3991-41A0-B586-329C64686015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30A0536-3991-41A0-B586-329C64686015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30A0536-3991-41A0-B586-329C64686015}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F084E063-669A-4319-9D90-4E50F0494A08}
+	EndGlobalSection
+EndGlobal
