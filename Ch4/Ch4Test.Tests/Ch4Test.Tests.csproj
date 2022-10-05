@@ -67,10 +67,6 @@
       <Project>{4021fe32-5aa1-4e48-aa90-d22b9ea3829b}</Project>
       <Name>Ch4.InfraConcrete</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ch4.InfraIF\Ch4.InfraIF.csproj">
-      <Project>{3067a528-addd-44c4-8d08-12d95954c2ed}</Project>
-      <Name>Ch4.InfraIF</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Ch4.UI\Ch4.UI.csproj">
       <Project>{c95db107-c9f4-4498-a16e-97251864818a}</Project>
       <Name>Ch4.UI</Name>

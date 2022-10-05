@@ -41,17 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountRepository.cs" />
+    <Compile Include="SQLite\AccountSQLite.cs" />
+    <Compile Include="Fakes\AccountFake.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ch4.BusinessIF\Ch4.DomainIF.csproj">
       <Project>{D1DB50FC-A7E4-4862-BEE9-D740F4219A72}</Project>
       <Name>Ch4.DomainIF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ch4.InfraIF\Ch4.InfraIF.csproj">
-      <Project>{3067a528-addd-44c4-8d08-12d95954c2ed}</Project>
-      <Name>Ch4.InfraIF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

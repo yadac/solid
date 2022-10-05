@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch4.DomainIF", "Ch4.Busines
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch4.DomainConcrete", "Ch4.DomainConcrete\Ch4.DomainConcrete.csproj", "{35B7FAE2-9C22-4632-BB4A-32C14C0BA9F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch4.InfraIF", "Ch4.InfraIF\Ch4.InfraIF.csproj", "{3067A528-ADDD-44C4-8D08-12D95954C2ED}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch4.InfraConcrete", "Ch4.InfraConcrete\Ch4.InfraConcrete.csproj", "{4021FE32-5AA1-4E48-AA90-D22B9EA3829B}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{35B7FAE2-9C22-4632-BB4A-32C14C0BA9F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35B7FAE2-9C22-4632-BB4A-32C14C0BA9F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35B7FAE2-9C22-4632-BB4A-32C14C0BA9F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3067A528-ADDD-44C4-8D08-12D95954C2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3067A528-ADDD-44C4-8D08-12D95954C2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3067A528-ADDD-44C4-8D08-12D95954C2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3067A528-ADDD-44C4-8D08-12D95954C2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4021FE32-5AA1-4E48-AA90-D22B9EA3829B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4021FE32-5AA1-4E48-AA90-D22B9EA3829B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4021FE32-5AA1-4E48-AA90-D22B9EA3829B}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -1,6 +1,5 @@
 ﻿using Ch4.DomainConcrete.Entities;
 using Ch4.DomainConcrete.Services;
-using Ch4.InfraConcrete;
 using Ch4.InfraConcrete.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;

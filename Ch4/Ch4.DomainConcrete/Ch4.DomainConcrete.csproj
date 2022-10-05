@@ -41,18 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
-    <Compile Include="AccountService.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Services\AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ch4.BusinessIF\Ch4.DomainIF.csproj">
       <Project>{d1db50fc-a7e4-4862-bee9-d740f4219a72}</Project>
       <Name>Ch4.DomainIF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ch4.InfraIF\Ch4.InfraIF.csproj">
-      <Project>{3067a528-addd-44c4-8d08-12d95954c2ed}</Project>
-      <Name>Ch4.InfraIF</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
