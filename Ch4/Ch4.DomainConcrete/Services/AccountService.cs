@@ -6,16 +6,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ch4Test.DomainIF.Exceptions;
 
 namespace Ch4.DomainConcrete.Services
 {
     public class AccountService : IAccountService
     {
-        private IAccount _account;
         private readonly IAccountRepository _accountRepository;
 
         public AccountService(IAccountRepository accountRepository)
         {
+            if (accountRepository == null)
+            {
+                throw new ArgumentNullException("accountRepository", "有効なリポジトリが必要です");
+            }
             _accountRepository = accountRepository;
         }
 
@@ -23,8 +27,18 @@ namespace Ch4.DomainConcrete.Services
             string uniqueAccountName,
             decimal transactionAmount)
         {
-            _account = _accountRepository.GetByName(uniqueAccountName);
-            _account.AddTransaction(transactionAmount);
+            var account = _accountRepository.GetByName(uniqueAccountName);
+            if (account != null)
+            {
+                try
+                {
+                    account.AddTransaction(transactionAmount);
+                }
+                catch (DomainException de)
+                {
+                    throw new ServiceException("Domain処理でエラーが発生", de);
+                }
+            }
         }
     }
 }

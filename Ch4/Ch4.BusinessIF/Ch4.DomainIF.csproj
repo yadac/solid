@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\IAccount.cs" />
+    <Compile Include="Exceptions\DomainException.cs" />
+    <Compile Include="Exceptions\ExceptionBase.cs" />
+    <Compile Include="Exceptions\ServiceException.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Services\IAccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
