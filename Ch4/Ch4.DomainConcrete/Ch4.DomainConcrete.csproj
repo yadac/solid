@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\BronzeAccount.cs" />
+    <Compile Include="Entities\SilverAccount.cs" />
+    <Compile Include="Entities\PratinumAccount .cs" />
+    <Compile Include="Entities\GoldAccount.cs" />
+    <Compile Include="Factories.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,12 +10,12 @@ namespace Ch4.InfraConcrete.Fakes
 {
     public class AccountFake : IAccountRepository
     {
-        private IAccount _account;
-        public AccountFake(IAccount account)
+        private AccountBase _account;
+        public AccountFake(AccountBase account)
         {
             _account = account;
         }
-        public IAccount GetByName(string name)
+        public AccountBase GetByName(string name)
         {
             return _account;
         }

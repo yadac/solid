@@ -4,8 +4,8 @@
     {
         public DomainException()
         {
-
         }
+
         public DomainException(string message) : base(message)
         {
         }

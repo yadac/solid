@@ -9,6 +9,6 @@ namespace Ch4.DomainIF.Repositories
 {
     public interface IAccountRepository
     {
-        IAccount GetByName(string name);
+        AccountBase GetByName(string name);
     }
 }

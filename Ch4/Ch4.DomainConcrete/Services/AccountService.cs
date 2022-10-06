@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ch4Test.DomainIF.Exceptions;
+using Ch4.DomainConcrete.Entities;
 
 namespace Ch4.DomainConcrete.Services
 {
