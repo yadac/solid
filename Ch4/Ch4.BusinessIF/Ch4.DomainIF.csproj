@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\AccountBase.cs" />
+    <Compile Include="Entities\IAccount.cs" />
+    <Compile Include="Entities\IRewardCard.cs" />
     <Compile Include="Exceptions\DomainException.cs" />
     <Compile Include="Exceptions\ExceptionBase.cs" />
     <Compile Include="Exceptions\ServiceException.cs" />

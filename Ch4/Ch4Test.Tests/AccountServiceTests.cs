@@ -27,7 +27,7 @@ namespace Ch4Test.Tests
         [TestMethod]
         public void 継承されたアカウントでのトランザクション追加テスト()
         {
-            var account = Factories.CreateAccount(AccountType.Gold);
+            var account = Factories.CreateAccount(AccountType.Bronze);
             _accountRepository.Setup(r => r.GetByName("Trading Account")).Returns(account);
             _accountService.AddTransactionToAccount("Trading Account", 200m);
             Assert.AreEqual(200m, account.Balance);
@@ -50,8 +50,10 @@ namespace Ch4Test.Tests
         [TestMethod]
         public void Accountのトランザクション処理でエラーが発生するテスト()
         {
-            var account = new FakeAccount();
-            _accountRepository.Setup(r => r.GetByName("Trading Account")).Returns(account);
+            //var account = new FakeAccount();
+            var account = new Mock<IAccount>();
+            account.Setup(a => a.AddTransaction(200m)).Throws<DomainException>();
+            _accountRepository.Setup(r => r.GetByName("Trading Account")).Returns(account.Object);
             try
             {
                 _accountService.AddTransactionToAccount("Trading Account", 200m);
@@ -67,7 +69,7 @@ namespace Ch4Test.Tests
             var account = Factories.CreateAccount(AccountType.Bronze);
             _accountRepository.Setup(r => r.GetByName("Trading Account")).Returns(account);
             _accountService.AddTransactionToAccount("Trading Account", 100m);
-            Assert.AreEqual(5, account.RewardPoints);
+            Assert.AreEqual(5, account.RewardsPoint);
         }
     }
 

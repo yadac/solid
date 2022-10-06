@@ -10,7 +10,7 @@ namespace Ch4.InfraConcrete.SQLite
 {
     public class AccountSQLite : IAccountRepository
     {
-        public AccountBase GetByName(string name)
+        public IAccount GetByName(string name)
         {
             return null;
         }

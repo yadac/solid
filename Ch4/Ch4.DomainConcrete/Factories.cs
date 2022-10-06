@@ -10,23 +10,23 @@ namespace Ch4.DomainConcrete
 {
     public class Factories
     {
-        public static AccountBase CreateAccount(AccountType type)
+        public static Account CreateAccount(AccountType type)
         {
-            AccountBase account = null;
+            Account account = null;
             switch (type)
             {
                 case AccountType.Bronze:
-                    account = new BronzeAccount();
+                    account = new Account(new BronzeRewardCard());
                     break;
-                case AccountType.Silver:
-                    account = new SilverAccount();
-                    break;
-                case AccountType.Gold:
-                    account = new GoldAccount();
-                    break;
-                case AccountType.Pratinum:
-                    account = new PratinumAccount();
-                    break;
+                //case AccountType.Silver:
+                //    account = new SilverAccount();
+                //    break;
+                //case AccountType.Gold:
+                //    account = new GoldAccount();
+                //    break;
+                //case AccountType.Pratinum:
+                //    account = new PratinumAccount();
+                //    break;
                 default:
                     break;
             }
