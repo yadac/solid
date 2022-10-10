@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3D9ABB9-2FC3-447B-A578-3627F20D927F}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ch4.DomainConcrete</RootNamespace>
-    <AssemblyName>Ch4.DomainConcrete</AssemblyName>
+    <ProjectGuid>{6E87470C-F19C-4A45-9881-C80F1D5E67E6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ch3Decorator</RootNamespace>
+    <AssemblyName>Ch3Decorator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,33 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Objects\AdoNetTradeStorage.cs" />
-    <Compile Include="Objects\Log4NetLoggerAdapter.cs" />
-    <Compile Include="Objects\SimpleTradeParser.cs" />
-    <Compile Include="Objects\SimpleTradeValidator.cs" />
-    <Compile Include="Objects\SQLiteTradeStorage.cs" />
-    <Compile Include="Objects\StreamTradeDataProvider.cs" />
-    <Compile Include="Objects\TradeMapper.cs" />
+    <Compile Include="IComponent.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ch5.DomainIF\Ch5.DomainIF.csproj">
-      <Project>{34853dab-9c06-4f02-9a00-9f6bb143034d}</Project>
-      <Name>Ch5.DomainIF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="log4net">
-      <Version>2.0.15</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SQLite">
-      <Version>1.0.116</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="log4net.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
