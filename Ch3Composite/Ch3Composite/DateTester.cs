@@ -39,17 +39,34 @@ namespace Ch3Composite
             Console.WriteLine("concrete do something");
         }
     }
+    public class TrueComponent : IComponent
+    {
+        public void Something()
+        {
+            Console.WriteLine("trueComponent do something");
+        }
+    }
+    public class FalseComponent : IComponent
+    {
+        public void Something()
+        {
+            Console.WriteLine("falseComponent do something");
+        }
+    }
 
     public class PredicatedComponent : IComponent
     {
-        private readonly IComponent _component;
+        private readonly IComponent _trueComponent;
+        private readonly IComponent _falseComponent;
         private readonly IPredicate _predicate;
 
         public PredicatedComponent(
-            IComponent component,
+            IComponent trueComponent,
+            IComponent falseComponent,
             IPredicate predicate)
         {
-            _component = component;
+            _trueComponent = trueComponent;
+            _falseComponent = falseComponent;
             _predicate = predicate;
         }
 
@@ -57,7 +74,11 @@ namespace Ch3Composite
         {
             if (_predicate.Test())
             {
-                _component.Something();
+                _trueComponent.Something();
+            }
+            else
+            {
+                _falseComponent.Something();
             }
         }
     }

@@ -19,10 +19,12 @@ namespace Ch3Composite
             component.Something();
 
             // 述語デコレーター：コードの実行付き条件をクライアントから隠蔽
+            // 分岐デコレーター：
             // Compositeで条件違いの処理も可能
             var example = new PredicatedDecoratorExample(
                 new PredicatedComponent(
-                    new ConcreteComponent(),
+                    new TrueComponent(),
+                    new FalseComponent(),
                     new IsEventDate(new DateTester())));
             example.Run();
         }
