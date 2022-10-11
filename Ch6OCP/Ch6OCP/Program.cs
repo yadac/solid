@@ -11,7 +11,7 @@ namespace Ch6OCP
         static void Main(string[] args)
         {
             TradeProcessClient tradeProcessClient = 
-                new TradeProcessClient(new TradeProcessor2());
+                new TradeProcessClient(new TradeProcessor());
             tradeProcessClient.DoProcess();
         }
     }

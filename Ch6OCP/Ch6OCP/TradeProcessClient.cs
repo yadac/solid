@@ -9,7 +9,7 @@
         }
         internal void DoProcess()
         {
-            _tradeProcessor.TradeProcessTrades();
+            _tradeProcessor.ProcessTrades();
         }
     }
 }
