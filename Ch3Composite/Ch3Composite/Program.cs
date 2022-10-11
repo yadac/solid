@@ -36,6 +36,11 @@ namespace Ch3Composite
                     // predicate
                     new IsEventDate(new DateTester())));
             example.Run();
+
+            // プロパティのデコレート
+            var example2 = new DecoratedComponentWithProperty(
+                new ConcreteComponentWithProperty());
+            example2.Something();
         }
     }
 }

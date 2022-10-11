@@ -132,7 +132,10 @@ namespace Ch3Composite
 
         public long Stop()
         {
-            _stopwatch.Stop();
+            var elapsedMilliseconds = _stopwatch.Stop();
+            Console.WriteLine("Stopwatch stopped after {0} seconds",
+                TimeSpan.FromMilliseconds(elapsedMilliseconds).TotalSeconds);
+            return elapsedMilliseconds;
         }
     }
 
