@@ -26,11 +26,21 @@ namespace Ch7LSP
         }
     }
 
-    public class UserRepository : IEntityRepository<User>
+    public class UserRepository : IEntityRepository<User>, IEqualityComparer<Entity>
     {
+        public bool Equals(Entity x, Entity y)
+        {
+            return x.ID == y.ID;
+        }
+
         public User GetByID(Guid id)
         {
             return new User();
+        }
+
+        public int GetHashCode(Entity obj)
+        {
+            throw new NotImplementedException();
         }
     }
 
