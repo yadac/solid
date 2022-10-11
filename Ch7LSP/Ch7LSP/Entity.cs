@@ -35,7 +35,7 @@ namespace Ch7LSP
 
         public User GetByID(Guid id)
         {
-            return new User();
+            throw new UserNotFoundException("user not found");
         }
 
         public int GetHashCode(Entity obj)

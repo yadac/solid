@@ -14,8 +14,17 @@ namespace Ch7LSP
             //shipping.CalculateShippingCost(
             //    1, 1, null);
 
-            var repository = new UserRepository();
-            repository.GetByID(new Guid());
+            var entityRepository = new EntityRepository();
+            var userRepository = new UserRepository();
+            try
+            {
+                entityRepository.GetByID(new Guid());
+                userRepository.GetByID(new Guid());
+            }
+            catch (ExceptionBase ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
