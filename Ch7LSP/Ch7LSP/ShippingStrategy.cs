@@ -5,15 +5,10 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics.Contracts;
 
 namespace Ch7LSP
 {
-    //public interface IShippingStrategy
-    //{
-    //    decimal flatRate { get;}
-    //    decimal CalculateShippingCost(float weight, float dimention, RegionInfo region);
-    //}
-
     internal class ShippingStrategy
     {
         public decimal flatRate { get; }
@@ -36,22 +31,28 @@ namespace Ch7LSP
             RegionInfo desitination)
         {
             // 事前条件
-            if (packageWeightInKilograms <= 0f)
-            {
-                throw new ArgumentOutOfRangeException(
-                    "packageWeightInKilograms",
-                    "Package weight must be positive and non-zero");
-            }
+            //if (packageWeightInKilograms <= 0f)
+            //{
+            //    throw new ArgumentOutOfRangeException(
+            //        "packageWeightInKilograms",
+            //        "Package weight must be positive and non-zero");
+            //}
+            Contract.Requires<ArgumentOutOfRangeException>(
+                packageWeightInKilograms > 0f,
+                "Package weight must be positive and non-zero");
 
             var shippingCost = decimal.One;
 
             // 事後条件
-            if (shippingCost <= decimal.Zero)
-            {
-                throw new ArgumentOutOfRangeException(
-                    "return",
-                    "The return value is out of range");
-            }
+            //if (shippingCost <= decimal.Zero)
+            //{
+            //    throw new ArgumentOutOfRangeException(
+            //        "return",
+            //        "The return value is out of range");
+            //}
+            Contract.Ensures(
+                shippingCost > decimal.Zero,
+                "The return value is out of range");
 
             return shippingCost;
         }
