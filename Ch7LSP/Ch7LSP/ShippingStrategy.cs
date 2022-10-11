@@ -16,20 +16,22 @@ namespace Ch7LSP
         public ShippingStrategy(decimal flatRate)
         {
             // データ不変条件
-            if (flatRate <= decimal.Zero)
-            {
-                throw new ArgumentOutOfRangeException(
-                    "flatRate",
-                    "Flat Rate must be positive and non-zero");
-            }
+            //if (flatRate <= decimal.Zero)
+            //{
+            //    throw new ArgumentOutOfRangeException(
+            //        "flatRate",
+            //        "Flat Rate must be positive and non-zero");
+            //}
             this.flatRate = flatRate;
         }
 
-        protected virtual decimal CalculateShippingCost(
+        internal virtual decimal CalculateShippingCost(
             float packageWeightInKilograms,
             float packageDimensionsInInches,
             RegionInfo desitination)
         {
+            ClassInvariant();
+
             // 事前条件
             //if (packageWeightInKilograms <= 0f)
             //{
@@ -37,6 +39,8 @@ namespace Ch7LSP
             //        "packageWeightInKilograms",
             //        "Package weight must be positive and non-zero");
             //}
+
+            // 事前条件 Code Contract
             Contract.Requires<ArgumentOutOfRangeException>(
                 packageWeightInKilograms > 0f,
                 "Package weight must be positive and non-zero");
@@ -50,11 +54,20 @@ namespace Ch7LSP
             //        "return",
             //        "The return value is out of range");
             //}
+
+            // 事後条件 Code Contract
             Contract.Ensures(
                 shippingCost > decimal.Zero,
                 "The return value is out of range");
 
             return shippingCost;
+        }
+        
+        [ContractInvariantMethod]
+        private void ClassInvariant()
+        {
+            Contract.Invariant(flatRate > 0m,
+                "Flat Rate must be positive and non-zero");
         }
     }
 
@@ -65,7 +78,7 @@ namespace Ch7LSP
         {
         }
 
-        protected override decimal CalculateShippingCost(
+        internal override decimal CalculateShippingCost(
             float packageWeightInKilograms,
             float packageDimensionsInInches,
             RegionInfo desitination)

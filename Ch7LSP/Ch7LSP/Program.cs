@@ -10,7 +10,12 @@ namespace Ch7LSP
     {
         static void Main(string[] args)
         {
-            var shipping = new Shipping();
+            //var shipping = new ShippingStrategy(decimal.MinusOne);
+            //shipping.CalculateShippingCost(
+            //    1, 1, null);
+
+            var repository = new UserRepository();
+            repository.GetByID(new Guid());
         }
     }
 }
