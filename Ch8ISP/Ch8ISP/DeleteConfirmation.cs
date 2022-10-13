@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace Ch8ISP
 {
-    public class DeleteConfirmation<T> : ICrud<T>, IUserInteraction
+    public class DeleteConfirmation<T> 
+        : ICrud<T>, IUserInteraction, IRead<T>
     {
         private ICrud<T> _crud;
+        private T _cachedEntity;
+        private IEnumerable<T> _cachedEntities;
+
         public DeleteConfirmation(ICrud<T> crud)
         {
             _crud = crud;
@@ -39,12 +43,20 @@ namespace Ch8ISP
 
         public IEnumerable<T> ReadAll()
         {
+            if (_cachedEntities == null)
+            {
+                _cachedEntities = _crud.ReadAll();
+            }
             return _crud.ReadAll();
         }
 
         public T ReadOne(Guid id)
         {
-            return _crud.ReadOne(id);
+            if (_cachedEntities == null)
+            {
+                _cachedEntity = _crud.ReadOne(id);
+            }
+            return _cachedEntity;
         }
 
         public void Update(T entity)
