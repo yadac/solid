@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Ch8ISP
 {
-    public interface IRead<T>
+    public interface ISave<T>
     {
-        T ReadOne(Guid id);
-        IEnumerable<T> ReadAll();
+        void Save(T entity);
     }
 }
