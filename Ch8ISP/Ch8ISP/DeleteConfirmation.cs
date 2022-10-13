@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace Ch8ISP
 {
-    public class DeleteConfirmation<T> : ICrud<T>
+    public class DeleteConfirmation<T> : ICrud<T>, IUserInteraction
     {
         private ICrud<T> _crud;
         public DeleteConfirmation(ICrud<T> crud)
         {
             _crud = crud;
+        }
+
+        public bool Confirmation(string message)
+        {
+            Console.WriteLine(message);
+            if (Console.ReadKey().Key == ConsoleKey.Y)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Create(T entity)
@@ -21,7 +31,10 @@ namespace Ch8ISP
 
         public void Delete(T entity)
         {
-            _crud.Delete(entity);
+            if (Confirmation("are you sure you want to delete [y/n] ?"))
+            {
+                _crud.Delete(entity);
+            }
         }
 
         public IEnumerable<T> ReadAll()
@@ -36,12 +49,7 @@ namespace Ch8ISP
 
         public void Update(T entity)
         {
-            Console.WriteLine("are you sure you want to delete the entity [y/n]?");
-            var keyInfo = Console.ReadKey();
-            if (keyInfo.Key == ConsoleKey.Y)
-            {
-                _crud.Delete(entity);
-            }
+            _crud.Update(entity);
         }
     }
 }
