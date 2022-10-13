@@ -10,6 +10,8 @@ namespace Ch8ISP
     {
         static void Main(string[] args)
         {
+            var oc = Factories.CreateOrderController();
+            var gc = Factories.CreateGenericController<Order>();
         }
     }
 }
