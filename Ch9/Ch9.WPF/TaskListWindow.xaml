@@ -1,0 +1,36 @@
+﻿<Window x:Class="Ch9.WPF.TaskListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ch9.WPF"
+        mc:Ignorable="d"
+        xmlns:vm="clr-namespace:Ch9.WPF.ViewModels"
+        Title="TaskListWindow" Height="450" Width="500">
+    <Window.DataContext>
+        <vm:TaskListWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <DataGrid Name="DG1" ItemsSource="{Binding MyTasks}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*" />
+                    <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" />
+                    <DataGridTextColumn Header="DueDate" Binding="{Binding DueDate}" />
+                    <!--<DataGridTextColumn Header="Completed" Binding="{Binding Completed}" Width="*"></DataGridTextColumn>-->
+                    <!--<DataGridCheckBoxColumn Header="Completed" 
+                                            Binding="{Binding Completed}"/>-->
+                    <!-- TemplateColumn の中に普通の CheckBox -->
+                    <DataGridTemplateColumn Header="Completed" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Completed}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

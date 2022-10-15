@@ -11,18 +11,6 @@
         <vm:MainWindowViewModel />
     </Window.DataContext>
     <Grid>
-        <!--<StackPanel>
-            <DataGrid Name="DG1" Height="300" Width="500"
-                      ItemsSource="{Binding}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="100"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="100"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" Width="100"></DataGridTextColumn>
-                    <DataGridTextColumn Header="DueDate" Binding="{Binding DueDate}" Width="100"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Completed" Binding="{Binding Completed}" Width="100"></DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </StackPanel>-->
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="文字列1"></Label>
