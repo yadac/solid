@@ -44,14 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientNeeds.cs" />
+    <Compile Include="ClientNeedsApproval.cs" />
     <Compile Include="CrudLogging.cs" />
     <Compile Include="CrudTransactional.cs" />
     <Compile Include="DeleteConfirmation.cs" />
     <Compile Include="DeleteEventPublishing.cs" />
     <Compile Include="Factories.cs" />
+    <Compile Include="IAction.cs" />
     <Compile Include="ICru.cs" />
     <Compile Include="IDelete.cs" />
     <Compile Include="IEventPublisher.cs" />
+    <Compile Include="IFunctions.cs" />
+    <Compile Include="IPersistence.cs" />
     <Compile Include="IRead.cs" />
     <Compile Include="ICrud.cs" />
     <Compile Include="ISave.cs" />
