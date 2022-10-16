@@ -23,12 +23,12 @@ namespace Ch9.WPF.Domain
             DueDate = dueDate;
             Completed = completed;
         }
-
-        public enum PriorityLevel
-        {
-            LOW,
-            MEDIUM,
-            HIGH
-        }
     }
+    public enum PriorityLevel
+    {
+        LOW = 10,
+        MEDIUM = 20,
+        HIGH = 30
+    }
+
 }

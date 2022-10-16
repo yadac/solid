@@ -30,7 +30,7 @@ namespace Ch9.WPF
                 new MyTask(
                     3, 
                     "Book flights", 
-                    MyTask.PriorityLevel.HIGH, 
+                    PriorityLevel.HIGH, 
                     DateTime.Now.AddDays(3), 
                     false)
                 );
