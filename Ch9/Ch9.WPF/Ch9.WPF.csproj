@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddTaskCommand.cs" />
     <Compile Include="ConcatCommand.cs" />
     <Compile Include="Domain\IMainWindowModelRepository.cs" />
     <Compile Include="Domain\MainWindowModel.cs" />
