@@ -8,5 +8,6 @@ namespace Ch9.WPF.Domain
 {
     public interface ITaskService
     {
+        IEnumerable<MyTask> GetAllTasks();
     }
 }

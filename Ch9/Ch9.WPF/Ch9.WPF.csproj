@@ -58,8 +58,10 @@
     <Compile Include="AddTaskCommand.cs" />
     <Compile Include="ConcatCommand.cs" />
     <Compile Include="Domain\IMainWindowModelRepository.cs" />
+    <Compile Include="Domain\ITaskService.cs" />
     <Compile Include="Domain\MainWindowModel.cs" />
     <Compile Include="Domain\MyTask.cs" />
+    <Compile Include="Infra\TaskServiceAdo.cs" />
     <Compile Include="Infra\Factories.cs" />
     <Compile Include="Infra\TaskStorage.cs" />
     <Compile Include="TaskListWindow.xaml.cs">

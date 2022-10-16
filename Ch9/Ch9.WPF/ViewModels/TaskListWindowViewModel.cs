@@ -25,19 +25,19 @@ namespace Ch9.WPF.ViewModels
         {
             _taskService = taskService;
             _taskCommand = new AddTaskCommand(this);
-            _myTasks = new ObservableCollection<MyTask>
-            {
-                new MyTask(0, "Clean the house", MyTask.PriorityLevel.LOW, DateTime.Now, false),
-                new MyTask(1, "Pay the bills", MyTask.PriorityLevel.HIGH, DateTime.Now.AddDays(1), true),
-                new MyTask(2, "Wash the dog", MyTask.PriorityLevel.MEDIUM, DateTime.Now.AddDays(2), false),
-            };
+            //_myTasks = new ObservableCollection<MyTask>();
+            var tasks = _taskService.GetAllTasks();
+            _myTasks = new ObservableCollection<MyTask>(tasks);
         }
 
         public ICommand AddTask => _taskCommand;
 
         public ObservableCollection<MyTask> MyTasks
         {
-            get { return _myTasks; }
+            get
+            {
+                return _myTasks;
+            }
             set
             {
                 _myTasks = value;
