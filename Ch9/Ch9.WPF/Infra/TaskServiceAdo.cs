@@ -1,6 +1,7 @@
 ﻿using Ch9.WPF.Domain;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,10 +14,10 @@ namespace Ch9.WPF.Infra
         public IEnumerable<MyTask> GetAllTasks()
         {
             var allTasks = new List<MyTask>();
-
-            // todo: adoで取得する
+            var settings = ConfigurationManager.ConnectionStrings["Ch9.WPF.Properties.Settings.Ch9ConnectionString"];
             using (var connection = 
-                new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Ch9.mdf;Integrated Security=True"))
+                //new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Ch9.mdf;Integrated Security=True"))
+                new SqlConnection(settings.ConnectionString))
             {
                 connection.Open();
                 using (var transaction = connection.BeginTransaction())
