@@ -1,8 +1,8 @@
 ﻿<Application x:Class="Ch9.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Ch9.WPF"
-             StartupUri="TaskListWindow.xaml">
+             xmlns:local="clr-namespace:Ch9.WPF">
+    <!--StartupUri="TaskListWindow.xaml">-->
     <Application.Resources>
          
     </Application.Resources>

@@ -7,9 +7,6 @@
         mc:Ignorable="d"
         xmlns:vm="clr-namespace:Ch9.WPF.ViewModels"
         Title="TaskListWindow" Height="450" Width="500">
-    <Window.DataContext>
-        <vm:TaskListWindowViewModel />
-    </Window.DataContext>
     <Grid>
         <StackPanel>
             <DataGrid Name="DG1" ItemsSource="{Binding MyTasks}" AutoGenerateColumns="False">

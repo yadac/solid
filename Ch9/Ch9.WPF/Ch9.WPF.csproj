@@ -78,6 +78,7 @@
       <DependentUpon>Ch9DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ConcatCommand.cs" />
+    <Compile Include="DI.cs" />
     <Compile Include="Domain\IMainWindowModelRepository.cs" />
     <Compile Include="Domain\ITaskService.cs" />
     <Compile Include="Domain\MainWindowModel.cs" />
@@ -164,6 +165,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>6.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

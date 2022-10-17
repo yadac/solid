@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ch9.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Ch9.WPF
     /// </summary>
     public partial class TaskListWindow : Window
     {
+        //private readonly TaskListWindowViewModel _viewModel;
         public TaskListWindow()
         {
             InitializeComponent();
