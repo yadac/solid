@@ -77,13 +77,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ch9DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DI.cs" />
+    <Compile Include="IocMSConfiguration.cs" />
     <Compile Include="Domain\ITaskService.cs" />
     <Compile Include="Domain\MyTask.cs" />
     <Compile Include="Domain\IConnectionFactory.cs" />
     <Compile Include="Infra\ConnectionFactory.cs" />
     <Compile Include="Infra\TaskServiceAdo.cs" />
-    <Compile Include="IocConfiguration.cs" />
+    <Compile Include="IocUnityConfiguration.cs" />
     <Compile Include="TaskListWindow.xaml.cs">
       <DependentUpon>TaskListWindow.xaml</DependentUpon>
     </Compile>
