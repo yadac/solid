@@ -24,6 +24,16 @@ namespace Ch9.WPF.Domain
             Completed = completed;
         }
     }
+
+    public class MyTaskDto
+    {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public PriorityLevel Priority { get; set; }
+        public DateTime DueDate { get; set; }
+        public bool Completed { get; set; }
+    }
+
     public enum PriorityLevel
     {
         LOW = 10,

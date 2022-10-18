@@ -14,10 +14,5 @@ namespace Ch9.WPF.Infra
         {
             return new TaskStorage();
         }
-
-        public static ITaskService CreateTaskService()
-        {
-            return new TaskServiceAdo();
-        }
     }
 }

@@ -20,11 +20,11 @@ namespace Ch9.WPF
     /// </summary>
     public partial class TaskListWindow : Window
     {
-        //private readonly TaskListWindowViewModel _viewModel;
-        public TaskListWindow()
+        public TaskListWindow(TaskListWindowViewModel model)
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.DataContext = model;
         }
     }
 }

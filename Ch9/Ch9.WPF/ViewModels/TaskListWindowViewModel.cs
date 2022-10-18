@@ -16,16 +16,10 @@ namespace Ch9.WPF.ViewModels
         private ICommand _taskCommand;
         private readonly ITaskService _taskService;
 
-        public TaskListWindowViewModel()
-            : this(Factories.CreateTaskService())
-        {
-        }
-
         public TaskListWindowViewModel(ITaskService taskService)
         {
             _taskService = taskService;
             _taskCommand = new AddTaskCommand(this);
-            //_myTasks = new ObservableCollection<MyTask>();
             var tasks = _taskService.GetAllTasks();
             _myTasks = new ObservableCollection<MyTask>(tasks);
         }

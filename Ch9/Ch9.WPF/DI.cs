@@ -9,7 +9,7 @@ using Ch9.WPF.ViewModels;
 
 namespace Ch9.WPF
 {
-    public static class DI
+    public class DI
     {
         static ServiceCollection _container = new ServiceCollection();
         static ServiceProvider _serviceProvider;

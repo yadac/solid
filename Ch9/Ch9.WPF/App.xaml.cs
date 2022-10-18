@@ -1,4 +1,5 @@
-﻿using Ch9.WPF.Domain;
+﻿using AutoMapper;
+using Ch9.WPF.Domain;
 using Ch9.WPF.Infra;
 using Ch9.WPF.ViewModels;
 using System;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Linq;
 using Unity;
 
 namespace Ch9.WPF
@@ -20,30 +22,31 @@ namespace Ch9.WPF
     /// </summary>
     public partial class App : Application
     {
+        private IocConfiguration _ioc;
+
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-            var vm = DI.Resolve<ViewModels.TaskListWindowViewModel>();
-            var view = new TaskListWindow()
-            {
-                DataContext = vm,
-            };
-            view.Show();
-        }
+            // AutoMapper
+            // CreateMappings();
 
-        private IUnityContainer _container;
-        private void OnApplicationStartup(object sender, StartupEventArgs e)
-        {
-            // AutoMapper導入前
-            //CreateMappings();
-            _container = new UnityContainer();
-            _container.RegisterType<ITaskService, TaskServiceAdo>();
-            _container.RegisterType<TaskListWindow>();
-            _container.RegisterType<TaskListWindowViewModel>();
-            MainWindow = _container.Resolve<TaskListWindow>();
-            MainWindow.DataContext = _container.Resolve<TaskListWindowViewModel>();
+            // Microsoft DI
+            //base.OnStartup(e);
+            //var vm = DI.Resolve<ViewModels.TaskListWindowViewModel>();
+            //var view = new TaskListWindow()
+            //{
+            //    DataContext = vm,
+            //};
+            //view.Show();
+
+            // Unity DI
+            //_ioc = new IocConfiguration();
+            //_ioc.Register();
+
+            MainWindow = 
+                IocConfiguration.Resolve<TaskListWindow>();
+            MainWindow.DataContext =
+                IocConfiguration.Resolve<TaskListWindowViewModel>();
             MainWindow.Show();
         }
-
     }
 }
