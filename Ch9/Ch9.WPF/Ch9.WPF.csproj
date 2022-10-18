@@ -79,7 +79,6 @@
     </Compile>
     <Compile Include="DI.cs" />
     <Compile Include="Domain\ITaskService.cs" />
-    <Compile Include="Domain\MainWindowModel.cs" />
     <Compile Include="Domain\MyTask.cs" />
     <Compile Include="Domain\IConnectionFactory.cs" />
     <Compile Include="Infra\ConnectionFactory.cs" />

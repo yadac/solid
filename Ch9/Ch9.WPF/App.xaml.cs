@@ -22,28 +22,27 @@ namespace Ch9.WPF
     /// </summary>
     public partial class App : Application
     {
-        private IocConfiguration _ioc;
+        //private IocUnityConfiguration _config;
+        private IocMSConfiguration _config;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             // AutoMapper
             // CreateMappings();
 
+            base.OnStartup(e);
+
             // Microsoft DI
-            //base.OnStartup(e);
-            //var vm = DI.Resolve<ViewModels.TaskListWindowViewModel>();
-            //var view = new TaskListWindow()
-            //{
-            //    DataContext = vm,
-            //};
-            //view.Show();
+            _config = new IocMSConfiguration();
+            _config.Register();
+            MainWindow = _config.Resolve<TaskListWindow>();
+            MainWindow.Show();
 
             // Unity DI
-            MainWindow = 
-                IocConfiguration.Resolve<TaskListWindow>();
-            MainWindow.DataContext =
-                IocConfiguration.Resolve<TaskListWindowViewModel>();
-            MainWindow.Show();
+            //_config = new IocConfiguration();
+            //_config.Register();
+            //MainWindow = _config.Resolve<TaskListWindow>();
+            //MainWindow.Show();
         }
     }
 }

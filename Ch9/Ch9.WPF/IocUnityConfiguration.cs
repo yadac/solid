@@ -12,21 +12,26 @@ using Unity;
 
 namespace Ch9.WPF
 {
-    public class IocConfiguration
+    /// <summary>
+    /// UnityによるDI準備
+    /// </summary>
+    internal class IocUnityConfiguration
     {
-        private static readonly IUnityContainer _container;
+        private readonly IUnityContainer _container;
 
-        static IocConfiguration()
+        internal IocUnityConfiguration()
         {
             _container = new UnityContainer();
-            // register
+        }
+        internal void Register()
+        {
             _container.RegisterType<TaskListWindow>();
             _container.RegisterType<TaskListWindowViewModel>();
             _container.RegisterType<ITaskService, TaskServiceAdo>();
             _container.RegisterType<IConnectionFactory, ConnectionFactory>();
         }
 
-        public static T Resolve<T>() 
+        internal T Resolve<T>() 
         {
             return _container.Resolve<T>();
         }
