@@ -39,9 +39,6 @@ namespace Ch9.WPF
             //view.Show();
 
             // Unity DI
-            //_ioc = new IocConfiguration();
-            //_ioc.Register();
-
             MainWindow = 
                 IocConfiguration.Resolve<TaskListWindow>();
             MainWindow.DataContext =
