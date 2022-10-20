@@ -20,7 +20,7 @@ namespace TreyResearch
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            // configure custom services
+            // config custom services
             ConfigureServices(builder.Services);
 
             var app = builder.Build();
@@ -52,6 +52,8 @@ namespace TreyResearch
             // Add custom services 
             services.AddScoped<IRoomRepository, AdoNetRoomRepository>();
             services.AddScoped<IConnectionIsolationFactory, ConnectionIsolationFactory>();
+            services.AddScoped<IRoomViewModelReader, RoomViewModelService>();
+            services.AddScoped<IRoomViewModelWriter, RoomViewModelService>();
 
             // Mapping
             services.AddAutoMapper(cfg => cfg.AddProfile<RoomProfile>());

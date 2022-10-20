@@ -15,16 +15,13 @@ namespace TreyResearch.Controllers
 {
     public class RoomsController : Controller
     {
-        // todo: delete
-        // private readonly TreyResearchContext _context;
-        private readonly IRoomRepository _roomRepository;
-        private readonly IMapper _mapper;
+        private readonly IRoomViewModelReader _reader;
+        private readonly IRoomViewModelWriter _writer;
 
-        public RoomsController(IRoomRepository roomRepository, IMapper mapper)
+        public RoomsController(IRoomViewModelReader reader, IRoomViewModelWriter writer)
         {
-            // _context = context;
-            _roomRepository = roomRepository;
-            _mapper = mapper;
+            _reader = reader;
+            _writer = writer;
         }
 
         // GET: Rooms/Create
@@ -36,13 +33,7 @@ namespace TreyResearch.Controllers
         // GET: Rooms/Create
         public IActionResult List()
         {
-            var rooms = _roomRepository.GetAll();
-            var roomLists = new List<RoomListViewModel>();
-            foreach (var room in rooms)
-            {
-                roomLists.Add(_mapper.Map<RoomListViewModel>(room));
-            }
-            return View(roomLists);
+            return View(_reader.GetAll());
         }
 
         // POST: Rooms/Create
@@ -56,8 +47,7 @@ namespace TreyResearch.Controllers
             if (ModelState.IsValid)
             {
                 // viewmodelに変換
-                var room = new Room { Name = model.Name };
-                _roomRepository.Create(room);
+                _writer.Create(model);
                 result = RedirectToAction("List");
             }
             else
