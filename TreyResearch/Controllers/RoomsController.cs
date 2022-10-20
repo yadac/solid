@@ -18,7 +18,9 @@ namespace TreyResearch.Controllers
         private readonly IRoomViewModelReader _reader;
         private readonly IRoomViewModelWriter _writer;
 
-        public RoomsController(IRoomViewModelReader reader, IRoomViewModelWriter writer)
+        public RoomsController(
+            IRoomViewModelReader reader, 
+            IRoomViewModelWriter writer)
         {
             _reader = reader;
             _writer = writer;
@@ -34,6 +36,12 @@ namespace TreyResearch.Controllers
         public IActionResult List()
         {
             return View(_reader.GetAll());
+        }
+
+        [HttpGet]
+        public IActionResult Messages(int roomId)
+        {
+            return View(_reader.GetRoomMessages(roomId));
         }
 
         // POST: Rooms/Create

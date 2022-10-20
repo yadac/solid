@@ -7,13 +7,19 @@ namespace TreyResearch.Services
     /// <summary>
     /// Controller⇔Infraの橋渡し
     /// </summary>
-    public class RoomViewModelService : IRoomViewModelReader, IRoomViewModelWriter
+    public class RoomViewModelService : 
+        IRoomViewModelReader, IRoomViewModelWriter
     {
         private readonly IRoomRepository _roomRepository;
+        private readonly IMessageRepository _messageRepository;
         private readonly IMapper _mapper;
-        public RoomViewModelService(IRoomRepository roomRepository, IMapper mapper)
+        public RoomViewModelService(
+            IRoomRepository roomRepository, 
+            IMessageRepository messageRepository,
+            IMapper mapper)
         {
             _roomRepository = roomRepository;
+            _messageRepository = messageRepository;
             _mapper = mapper;
         }
 
@@ -29,5 +35,10 @@ namespace TreyResearch.Services
             _roomRepository.Create(room);
         }
 
+        public IEnumerable<RoomMessagesViewModel> GetRoomMessages(int roomId)
+        {
+            var messages = _messageRepository.GetRoomMessages(roomId);
+            return _mapper.Map<List<RoomMessagesViewModel>>(messages);
+        }
     }
 }

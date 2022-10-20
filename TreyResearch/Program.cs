@@ -51,12 +51,14 @@ namespace TreyResearch
         {
             // Add custom services 
             services.AddScoped<IRoomRepository, AdoNetRoomRepository>();
+            services.AddScoped<IMessageRepository, AdoNetMessageRepository>();
             services.AddScoped<IConnectionIsolationFactory, ConnectionIsolationFactory>();
             services.AddScoped<IRoomViewModelReader, RoomViewModelService>();
             services.AddScoped<IRoomViewModelWriter, RoomViewModelService>();
 
             // Mapping
             services.AddAutoMapper(cfg => cfg.AddProfile<RoomProfile>());
+            services.AddAutoMapper(cfg => cfg.AddProfile<MessageProfile>());
             services.AddSingleton<IMapper, Mapper>();
         }
     }

@@ -15,7 +15,7 @@ namespace TreyResearch.Data
         }
 
         public DbSet<TreyResearch.Models.Room> Room { get; set; } = default!;
-
         public DbSet<TreyResearch.Models.Employee> Employee { get; set; }
+        public DbSet<TreyResearch.Models.Message> Message { get; set; }
     }
 }

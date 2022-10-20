@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TreyResearch.Data;
 
@@ -11,9 +12,10 @@ using TreyResearch.Data;
 namespace TreyResearch.Migrations
 {
     [DbContext(typeof(TreyResearchContext))]
-    partial class TreyResearchContextModelSnapshot : ModelSnapshot
+    [Migration("20221020143819_add-models")]
+    partial class addmodels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
